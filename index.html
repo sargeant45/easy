@@ -12,12 +12,23 @@
     
     <script>
     function easy() {
-      $('#easybutton').removeClass().addClass('animated tada');
-      var wait = window.setTimeout( function(){
-          $('#easybutton').removeClass('animated tada')},
-          1300
-      );
-      document.getElementById('easysound').play();
+      var number = Math.floor((Math.random() * 1000) + 1);
+      if(number != 500) {
+        $('#easybutton').removeClass().addClass('animated tada');
+        var wait = window.setTimeout( function(){
+            $('#easybutton').removeClass('animated tada')},
+            1300
+        );
+        document.getElementById('easysound').play();
+      }
+      if(number == 500) {
+        $('#easybutton').removeClass().addClass('animated tada');
+        var wait = window.setTimeout( function(){
+            $('#easybutton').removeClass('animated tada')},
+            55000
+        );
+        document.getElementById('takenmonologue').play();
+      }
     }
     </script>
   </head>
@@ -34,5 +45,6 @@
       </div>
     </div>
     <audio id="easysound" src="that_was_easy.mp3"></audio>
+    <audio id="takenmonologue" src="http://picosong.com/cdn/cbd0f7658797ef65f5e130552e036444.mp3"></audio>
   </body>
 </html>
