@@ -12,8 +12,12 @@
     
     <script>
     function easy() {
-      $('#easybutton').addClass('animated tada');
-      playsound('http://ethanarterberry.com/easy/that_was_easy.mp3');
+      $('#easybutton').removeClass().addClass('animated tada');
+      var wait = window.setTimeout( function(){
+          $('#animateTest').removeClass()},
+          1300
+      );
+      document.getElementById('easysound').play();
     }
     </script>
   </head>
@@ -29,5 +33,6 @@
         </div>
       </div>
     </div>
+    <audio id="easysound" src="that_was_easy.mp3"></audio>
   </body>
 </html>
